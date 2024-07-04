@@ -12,7 +12,9 @@ import {
 } from "react-router-dom";
 import { PostPage, postsLoader } from "./pages/Post/Post.page";
 import { postDetailsLoader } from "./pages/Post/PostDetails.page";
+import { postEditLoader } from "./pages/Post/PostEdit.page";
 import PostDetailsPage from "./pages/Post/PostDetails.page";
+import PostEditPage from "./pages/Post/PostEdit.page";
 
 export const Router = () => {
   const authCheck = useBoundStore((state) => {
@@ -62,6 +64,15 @@ export const Router = () => {
             </ProtectedRoute>
           }
           loader={postDetailsLoader}
+        />
+          <Route
+          path="/posts/:id/edit"
+          element={
+            <ProtectedRoute isAllowed={!!authCheck}>
+              <PostEditPage />
+            </ProtectedRoute>
+          }
+          loader={postEditLoader}
         />
         <Route path="/" element={<Landing />} />
         <Route path="*" element={<NotFound />} />

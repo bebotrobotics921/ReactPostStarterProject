@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <SVGComponent size={28} />
+        <SVGComponent size={28} /><h3>BEAR PHOTOGRAPHY</h3>
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>

@@ -57,38 +57,7 @@ const LoginPage = () => {
         </Button>
       </Paper>
     </Container>
-    /*<div style={{ display: "flex", justifyContent: "center" }}>
-      <form onSubmit={onLogin}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gridGap: "20px",
-            background: "#d3d3d3",
-            padding: "50px",
-          }}
-        >
-          <h1>This is the login page</h1>
-          <input
-            placeholder="email"
-            name="email"
-            type="email"
-            required
-            style={{ minWidth: "320px", height: "26px" }}
-          />
-          <input
-            placeholder="password"
-            name="password"
-            type="password"
-            required
-            style={{ minWidth: "320px", height: "26px" }}
-          />
-          <button type="submit">login</button>
-          {authLoading ? <h2>Loading...</h2> : null}
-        </div>
-      </form>
-    </div>*/
+    
   );
 };
 
