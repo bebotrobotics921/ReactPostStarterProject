@@ -7,8 +7,10 @@ import {
   verifyUser,
   parseToken,
   addPost,
+  updatePost,
   posts,
   sleep,
+  findPost,
 } from "./fakedb";
 
 const port = 8085;
@@ -44,14 +46,15 @@ app.post("/api/user/validation", (req, res) => {
 
 app.get("/api/posts", async (req, res) => {
   // Sleep delay goes here
+ 
   res.json(posts);
 });
 
 // ⭐️ TODO: Implement this yourself
 app.get("/api/posts/:id", (req, res) => {
   const id = req.params.id;
-  // The line below should be fixed.
-  res.json(id);
+  
+  res.json(findPost(id));
 });
 
 /**
@@ -70,4 +73,9 @@ app.post("/api/posts", (req, res) => {
   res.status(200).json({ success: true });
 });
 
+app.put("/api/posts", (req, res) => {
+  const incomingPost = req.body;
+  updatePost(incomingPost);
+  res.status(200).json({ success: true });
+});
 app.listen(port, () => console.log("Server is running"));

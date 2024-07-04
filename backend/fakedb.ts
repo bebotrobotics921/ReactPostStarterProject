@@ -30,7 +30,9 @@ export const posts = [
     userId: 2,
   },
 ];
-
+export const findPost = (id: any) => {
+  return posts.find(post => post.id === id)
+}
 export const addPost = (post: any) => {
   //  Issues:
   //  *     The request body contains the title, category, and image,
@@ -39,6 +41,17 @@ export const addPost = (post: any) => {
   post.id = 3;
   post.userId = 2;
   posts.push(post);
+};
+
+export const updatePost = (incomingPost: any) => {
+  const foundPost = posts.find(post => post.id === incomingPost.id)
+  if (foundPost) {
+    foundPost.image = incomingPost.image;
+    foundPost.title = incomingPost.title;
+    foundPost.category = incomingPost.category;
+    foundPost.content = incomingPost.content;
+    foundPost.userId = incomingPost.userId;
+  }
 };
 
 export const verifyUser = (email: string, password: string) => {
