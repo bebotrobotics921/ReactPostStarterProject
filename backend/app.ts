@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import jwt from "jsonwebtoken";
+
 import {
   findUserById,
   IDecodedUser,
@@ -46,6 +47,8 @@ app.post("/api/user/validation", (req, res) => {
 
 app.get("/api/posts", async (req, res) => {
   // Sleep delay goes here
+
+  await sleep(5000);
  
   res.json(posts);
 });

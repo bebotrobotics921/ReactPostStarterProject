@@ -7,11 +7,11 @@ import { useLoaderData } from "react-router-dom";
 
 function PostDetailsPage() {
   const posts = useLoaderData();
-   
+   console.log(posts)
   return (
     
       <Container >
-        {posts.title}
+        
         <SimpleGrid cols={2}>
         
       <Link to="/posts/id/edit">

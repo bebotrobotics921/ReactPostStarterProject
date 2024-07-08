@@ -11,7 +11,7 @@ function PostEditPage() {
   return (
     
       <Container >
-      
+     
       <Link to="/posts/id">
       <Button>Update</Button>
       </Link>
